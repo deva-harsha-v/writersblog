@@ -1,6 +1,9 @@
 const express = require('express');
 const path = require('path');
 
+// Explicitly bind the directory tracking path to ensure serverless builds can resolve the location
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -246,3 +249,6 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`🚀 Writer's site running at http://localhost:${PORT}`);
 });
+
+// Add this at the very end of your server.js file
+module.exports = app;
