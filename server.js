@@ -60,21 +60,21 @@ app.get('/works', (req, res) => {
   });
 });
 
-app.get('/blog', (req, res) => {
-  res.render('blog', {
-    ...sharedData,
-    title: 'Blog',
-    currentPage: 'blog'
-  });
-});
+//app.get('/blog', (req, res) => {
+//  res.render('blog', {
+ //   ...sharedData,
+   // title: 'Blog',
+    //currentPage: 'blog'
+  //});
+//});
 
-app.get('/contact', (req, res) => {
-  res.render('contact', {
-    ...sharedData,
-    title: 'Contact',
-    currentPage: 'contact'
-  });
-});
+//app.get('/contact', (req, res) => {
+//  res.render('contact', {
+//    ...sharedData,
+//    title: 'Contact',
+//    currentPage: 'contact'
+//  });
+//});
 
 app.get('/tested-hearts', (req, res) => {
   res.render('tested-hearts', {
