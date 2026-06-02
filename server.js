@@ -4,17 +4,19 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// ─────────────────────────────────────
 // Express Configuration
-// ─────────────────────────────────────
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-// ─────────────────────────────────────
-// Site Information
-// ─────────────────────────────────────
+// Temporary Data
+const blogPosts = [];
+const popularPosts = [];
+const recentPosts = [];
+const categories = [];
+const tags = [];
+
 const siteData = {
   author: {
     name: 'Deva Harsha Veerla',
@@ -24,14 +26,6 @@ const siteData = {
   }
 };
 
-// KEEP ALL YOUR EXISTING DATA ARRAYS HERE
-// blogPosts
-// popularPosts
-// recentPosts
-// categories
-// tags
-
-// Shared Data
 const sharedData = {
   ...siteData,
   blogPosts,
@@ -41,18 +35,12 @@ const sharedData = {
   tags
 };
 
-// ─────────────────────────────────────
 // Routes
-// ─────────────────────────────────────
-
 app.get('/', (req, res) => {
   res.render('index', {
     ...sharedData,
     title: 'Home',
-    currentPage: 'home',
-    featuredPost: blogPosts[2],
-    highlightPost: blogPosts[0],
-    listPosts: blogPosts.slice(0, 3)
+    currentPage: 'home'
   });
 });
 
@@ -102,14 +90,10 @@ app.get('/happy-fathers-day', (req, res) => {
   });
 });
 
-// ─────────────────────────────────────
-// Export App
-// ─────────────────────────────────────
 module.exports = app;
 
-// Run locally only
 if (require.main === module) {
   app.listen(PORT, () => {
-    console.log(`🚀 Writer's site running at http://localhost:${PORT}`);
+    console.log(`🚀 Writer's site running on port ${PORT}`);
   });
 }
