@@ -1,0 +1,385 @@
+<%- include('partials/header') %>
+<link rel="stylesheet" href="/css/tested-hearts.css">
+<!-- The main content blocks from your page design -->
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-left">
+    <div class="hero-tag">A College Love Story</div>
+    <h1 class="hero-title">
+      Tested
+      <span class="italic-line">Hearts</span>
+    </h1>
+    <p class="hero-subtitle">A Novel by Deva Harsha Veerla</p>
+    <p class="hero-desc">"Some chapters are worth the rewrite. And some hearts, no matter how tested, find their way back."</p>
+    <div class="hero-author">
+      <div class="hero-author-line"></div>
+      <span class="hero-author-name">Deva Harsha Veerla</span>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="book-cover-wrapper">
+      <!-- Cleaned up cover wrapper using your local graphic asset from public/images/ -->
+      <div class="book-cover" style="background: none; box-shadow: none; padding: 0;">
+         <img src="/images/testedhearts.png" alt="Tested Hearts Book Cover" style="width: 280px; height: 420px; object-fit: cover; border-radius: 4px 12px 12px 4px; box-shadow: -8px 8px 0 #1a0e06, -16px 16px 40px rgba(0,0,0,0.6);" />
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">Tested Hearts</div>
+  <ul class="nav-links">
+    <li><a href="#synopsis">Story</a></li>
+    <li><a href="#characters">Characters</a></li>
+    <li><a href="#chapters">Chapters</a></li>
+    <li><a href="#quotes">Quotes</a></li>
+    <li><a href="#journey">Journey</a></li>
+  </ul>
+</nav>
+
+<!-- SYNOPSIS -->
+<section class="synopsis" id="synopsis">
+  <div class="synopsis-grid">
+    <div class="synopsis-text">
+      <div class="section-label">About the Story</div>
+      <h2 class="section-heading">A love that <em>grew</em> from the wrong roots</h2>
+      <p class="lead">"It wasn't love at first sight. It was attraction at first glance, respect through time, and love born quietly between a neem tree and a cup of chai."</p>
+      <p>Set in the bustling corridors of an Indian college campus, <em>Tested Hearts</em> follows Rohan — a charming, restless third-year student — whose eyes first land on Ananya for the wrong reasons. But what begins as fascination slowly deepens into something neither of them expected: a love that refuses every obstacle placed before it.</p>
+      <p>Through flat tires in the rain, awkward library encounters, cancelled dreams, family storms, and years of silence — this is a story about what happens when two imperfect people choose each other anyway.</p>
+      <div class="synopsis-stats">
+        <div class="stat-card">
+          <span class="stat-num">12</span>
+          <span class="stat-label">Chapters</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">2</span>
+          <span class="stat-label">Narrators</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">5</span>
+          <span class="stat-label">Years Spanned</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">1</span>
+          <span class="stat-label">Love Story</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="synopsis-visual">
+      <div class="campus-scene">
+        <p class="quote-text">"He wasn't trying to impress me. He wasn't even trying. And that scared me — because I found myself smiling more when he was around."</p>
+        <p class="quote-attr">— Ananya, Chapter 6</p>
+      </div>
+      <div style="margin-top:20px; background: var(--cream-dark); border-radius:12px; padding:28px; border:1px solid rgba(193,105,58,0.2);">
+        <p class="quote-text" style="font-family:'Lora',serif; font-style:italic; font-size:16px; line-height:1.75; color:var(--ink-mid); margin-bottom:12px;">"Some people are like gravity. You don't even realize you're orbiting them until you can't float anymore."</p>
+        <p class="quote-attr" style="font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--terracotta);">— Rohan, Chapter 3</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHARACTERS -->
+<section class="characters" id="characters">
+  <div style="max-width:1100px; margin:0 auto;">
+    <div class="section-label">The People</div>
+    <h2 class="section-heading">Characters who <em>live</em> beyond the page</h2>
+
+    <div class="char-grid">
+      <div class="char-card protagonist">
+        <div class="char-initial r">R</div>
+        <div class="char-name">Rohan</div>
+        <div class="char-role">Protagonist · Third Year IT</div>
+        <p class="char-desc">Charming and impulsive, Rohan's journey from a boy driven by attraction to a man shaped by love is the beating heart of this story. He loves quietly — in remembered preferences, in silent presence, in standing up when it costs him everything.</p>
+        <span class="char-trait trait-r">Loyal</span>
+        <span class="char-trait trait-r">Evolving</span>
+        <span class="char-trait trait-r">Quietly Brave</span>
+      </div>
+
+      <div class="char-card heroine">
+        <div class="char-initial a">A</div>
+        <div class="char-name">Ananya</div>
+        <div class="char-role">Heroine · Second Year CSE</div>
+        <p class="char-desc">Grounded, artistic, and fiercely self-aware, Ananya never intended to fall. She sketches people's souls, orders chai with authority, and loves with a depth she rarely shows — until she does, and it changes everything.</p>
+        <span class="char-trait trait-a">Strong</span>
+        <span class="char-trait trait-a">Perceptive</span>
+        <span class="char-trait trait-a">Quietly Fierce</span>
+      </div>
+
+      <div class="char-card support">
+        <div class="char-initial ri">Ri</div>
+        <div class="char-name">Riya</div>
+        <div class="char-role">Best Friend · Guard Dog</div>
+        <p class="char-desc">Sharp-tongued and fiercely protective, Riya is the voice of skepticism that slowly softens. She doubts Rohan, challenges the romance, but when it matters — she steps in with the steadiness of someone who loved Ananya first.</p>
+        <span class="char-trait trait-t">Sarcastic</span>
+        <span class="char-trait trait-t">Loyal</span>
+        <span class="char-trait trait-t">Secretly Soft</span>
+      </div>
+
+      <div class="char-card support">
+        <div class="char-initial ai">Ai</div>
+        <div class="char-name">Aisha</div>
+        <div class="char-role">Best Friend · The Warm One</div>
+        <p class="char-desc">The heart of the friend group, Aisha sees good in people before they show it. She's the nudge, the knowing smile, and the one who notices Ananya's silences long before anyone else does.</p>
+        <span class="char-trait trait-t">Warm</span>
+        <span class="char-trait trait-t">Observant</span>
+        <span class="char-trait trait-t">Honest</span>
+      </div>
+
+      <div class="char-card support">
+        <div class="char-initial k">K+S</div>
+        <div class="char-name">Karthik & Sahil</div>
+        <div class="char-role">Rohan's Friends</div>
+        <p class="char-desc">From careless laughter to quiet grief, these two boys grow alongside Rohan. They are both mirror and witness — watching him lose himself, find himself, and refuse to give up on the one person who mattered.</p>
+        <span class="char-trait trait-r">Brothers</span>
+        <span class="char-trait trait-r">Flawed</span>
+        <span class="char-trait trait-r">Redeemed</span>
+      </div>
+
+      <div class="char-card protagonist">
+        <div class="char-initial r" style="font-size:14px; background:rgba(160,128,96,0.15); color:var(--muted);">Fam</div>
+        <div class="char-name">The Families</div>
+        <div class="char-role">The Obstacle & The Lesson</div>
+        <p class="char-desc">Savitri's prejudice and Prabhakar's fear are not villains — they are love misshapen by fear. Their arcs are among the story's most human, showing that sometimes, the people who hurt us also have the hardest lessons to unlearn.</p>
+        <span class="char-trait trait-a">Complex</span>
+        <span class="char-trait trait-a">Flawed</span>
+        <span class="char-trait trait-a">Human</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTERS -->
+<section class="chapters" id="chapters">
+  <div class="chapters-intro">
+    <div class="section-label">The Story</div>
+    <h2 class="section-heading">Every chapter, <em>a test</em></h2>
+    <p>Twelve chapters. Two voices. One love that refuses to stay quiet.</p>
+  </div>
+
+  <div class="chapter-list">
+    <a href="https://www.inkitt.com/stories/1494016/chapters/1" target="_blank" rel="noopener noreferrer" class="chapter-link">
+      <div class="chapter-item" data-num="1">
+        <div class="ch-num">Chapter One</div>
+        <div class="ch-title">Eyes That Wander</div>
+        <p class="ch-desc">Rohan notices Ananya at a cultural event — and blurts it into a live microphone. The beginning of everything embarrassing and real.</p>
+      </div>
+    </a>
+    <a href="https://www.inkitt.com/stories/1494016/chapters/2" target="_blank" rel="noopener noreferrer" class="chapter-link">
+      <div class="chapter-item" data-num="2">
+        <div class="ch-num">Chapter Two</div>
+        <div class="ch-title">Beneath the Surface</div>
+        <p class="ch-desc">A flat tire brings them close. A library seat brings them closer. Riya's suspicion and Aisha's warmth define the world Rohan is slowly entering.</p>
+      </div>
+    </a>
+    <a href="https://www.inkitt.com/stories/1494016/chapters/3" target="_blank" rel="noopener noreferrer" class="chapter-link">
+      <div class="chapter-item" data-num="3">
+        <div class="ch-num">Chapter Three</div>
+        <div class="ch-title">Unspoken Confessions</div>
+        <p class="ch-desc">Rohan describes his dream girl — and Ananya listens. The next day, she arrives wearing anklets. No words needed.</p>
+      </div>
+    </a>
+    <a href="https://www.inkitt.com/stories/1494016/chapters/4" target="_blank" rel="noopener noreferrer" class="chapter-link">
+      <div class="chapter-item" data-num="4">
+        <div class="ch-num">Chapter Four</div>
+        <div class="ch-title">The Unsayable Words</div>
+        <p class="ch-desc">Under fairy lights at the amphitheatre, Rohan finally says what he's been carrying. Ananya responds — with a samosa and a smile that says yes.</p>
+      </div>
+    </a>
+    <a href="https://www.inkitt.com/stories/1494016/chapters/5" target="_blank" rel="noopener noreferrer" class="chapter-link">
+      <div class="chapter-item" data-num="5">
+        <div class="ch-num">Chapter Five</div>
+        <div class="ch-title">Beneath the Surface of Love</div>
+        <p class="ch-desc">Friends fracture. Rohan defends Ananya and loses his old circle. But what he gains — and what he remembers about his parents — reveals the love he was always reaching for.</p>
+      </div>
+    </a>
+    <a href="https://www.inkitt.com/stories/1494016/chapters/6" target="_blank" rel="noopener noreferrer" class="chapter-link">
+      <div class="chapter-item" data-num="6">
+        <div class="ch-num">Chapter Six</div>
+        <div class="ch-title">The Girl Who Didn't Mean to Fall</div>
+        <p class="ch-desc">Ananya's voice. Her real fears, her quiet realizations, and the night Rohan showed up with hot water, chocolate, and flowers from a reel — and rewrote every idea she had of love.</p>
+      </div>
+    </a>
+    <a href="https://www.inkitt.com/stories/1494016/chapters/7" target="_blank" rel="noopener noreferrer" class="chapter-link">
+      <div class="chapter-item" data-num="7">
+        <div class="ch-num">Chapter Seven</div>
+        <div class="ch-title">The Way I Love Back</div>
+        <p class="ch-desc">Ananya returns the love in her own way: a note before his internship result, a muffin shared in silence. She learns to love not how the world taught her — but how Rohan did.</p>
+      </div>
+    </a>
+    <a href="https://www.inkitt.com/stories/1494016/chapters/8" target="_blank" rel="noopener noreferrer" class="chapter-link">
+      <div class="chapter-item" data-num="8">
+        <div class="ch-num">Chapter Eight</div>
+        <div class="ch-title">The Crack Before the Collapse</div>
+        <p class="ch-desc">A street. A brother's rage. A living room full of crossed arms. Ananya's silence. Rohan's mother's three sharp reasons. The night everything broke.</p>
+      </div>
+    </a>
+    <a href="https://www.inkitt.com/stories/1494016/chapters/9" target="_blank" rel="noopener noreferrer" class="chapter-link">
+      <div class="chapter-item" data-num="9">
+        <div class="ch-num">Chapter Nine</div>
+        <div class="ch-title">The Chapter Not Yet Complete</div>
+        <p class="ch-desc">Two years later. Rohan's office. A photo on the desk that never came down. The words he still carries: "Even unfinished stories have a heartbeat."</p>
+      </div>
+    </a>
+    <a href="https://www.inkitt.com/stories/1494016/chapters/10" target="_blank" rel="noopener noreferrer" class="chapter-link">
+      <div class="chapter-item" data-num="10">
+        <div class="ch-num">Chapter Ten</div>
+        <div class="ch-title">A Heart Still Waiting</div>
+        <p class="ch-desc">Ananya's voice returns — from a window, a memory of hot water and chocolate, and a feeling that the pause before the next chapter was never quite an ending.</p>
+      </div>
+    </a>
+    <a href="https://www.inkitt.com/stories/1494016/chapters/11" target="_blank" rel="noopener noreferrer" class="chapter-link">
+      <div class="chapter-item" data-num="11">
+        <div class="ch-num">Chapter Eleven</div>
+        <div class="ch-title">A Scar Called Hope</div>
+        <p class="ch-desc">A car crash. A hospital corridor. A mother's rage softened by two friends' words. And Ananya, arriving with the same three things Rohan once brought her.</p>
+      </div>
+    </a>
+    <a href="https://www.inkitt.com/stories/1494016/chapters/12" target="_blank" rel="noopener noreferrer" class="chapter-link">
+      <div class="chapter-item" data-num="12">
+        <div class="ch-num">Chapter Twelve</div>
+        <div class="ch-title">Vows of the Unfinished</div>
+        <p class="ch-desc">A small wedding. Marigolds and fairy lights. And Ananya, who reaches up and removes the mask from his healing face — in front of everyone.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- QUOTES -->
+<section class="quotes" id="quotes">
+  <div style="max-width:1100px; margin:0 auto; position:relative; z-index:1;">
+    <div class="section-label">Lines from the Book</div>
+    <h2 class="section-heading">Words that <em>stayed</em></h2>
+
+    <div class="quotes-grid">
+      <div class="quote-card quote-large">
+        <span class="big-quote-mark">"</span>
+        <p>"He didn't bring me the moon. He brought me comfort."</p>
+        <span class="q-source">Ananya's Sketchbook — Chapter 5</span>
+      </div>
+
+      <div class="quote-card">
+        <p>"You make me want to be better. Not for show. Not for people. But for us."</p>
+        <span class="q-source">Rohan — Chapter 5</span>
+      </div>
+
+      <div class="quote-card">
+        <p>"I never regret the things I choose with my heart."</p>
+        <span class="q-source">Ananya — Chapter 4</span>
+      </div>
+
+      <div class="quote-card">
+        <p>"This scar on his face? It's not the first. The first was when she left."</p>
+        <span class="q-source">Karthik — Chapter 11</span>
+      </div>
+
+      <div class="quote-card">
+        <p>"You left me once. I'm not letting you do that again."</p>
+        <span class="q-source">Ananya — Chapter 11</span>
+      </div>
+
+      <div class="quote-card">
+        <p>"When you're confused or tired of all this — just come back to me. Even if you don't say a word."</p>
+        <span class="q-source">Rohan — Chapter 5</span>
+      </div>
+
+      <div class="quote-card">
+        <p>"In a world that keeps running, the real love stories are written by those who pause and hold on — even when they don't have to."</p>
+        <span class="q-source">Ananya — Chapter 7</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section class="journey" id="journey">
+  <div style="max-width:1100px; margin:0 auto;">
+    <div class="section-label">The Arc</div>
+    <h2 class="section-heading">The shape of <em>their story</em></h2>
+
+    <div class="journey-inner">
+      <div class="timeline-item">
+        <div class="tl-dot">I</div>
+        <div class="tl-content">
+          <div class="tl-phase">Attraction</div>
+          <div class="tl-title">Eyes that notice the wrong thing first</div>
+          <p class="tl-desc">Rohan's gaze finds Ananya and stays. What begins as surface-level attraction — the kind he's honest enough to admit — slowly becomes curiosity. He follows her orbit. She notices. Neither is ready for what comes next.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-dot">II</div>
+        <div class="tl-content">
+          <div class="tl-phase">Connection</div>
+          <div class="tl-title">Chai, neem trees, and becoming real</div>
+          <p class="tl-desc">Library seats, bunked classes, anklets worn as a soft answer. Rohan finds his way into Ananya's circle — not through grand gestures, but through showing up. Staying quiet when she reads. Speaking up when others don't.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-dot">III</div>
+        <div class="tl-content">
+          <div class="tl-phase">Confession</div>
+          <div class="tl-title">The truth under fairy lights</div>
+          <p class="tl-desc">At the college amphitheatre, Rohan says what he's carried for months. Ananya takes the samosa back, takes a bite, and hands it to him. No grand declaration needed. Just two people choosing each other in the quietest way possible.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-dot">IV</div>
+        <div class="tl-content">
+          <div class="tl-phase">The Storm</div>
+          <div class="tl-title">Family, fear, and a fracture that shouldn't have been</div>
+          <p class="tl-desc">A brother's rage. A living room full of judgment. Ananya's frightened silence and Rohan's mother's three sharp words. The love survives — but the world around it doesn't, and they are separated by the weight of other people's fears.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-dot">V</div>
+        <div class="tl-content">
+          <div class="tl-phase">The Silence</div>
+          <div class="tl-title">Two years. A photo on a desk. A heart still waiting.</div>
+          <p class="tl-desc">Time passes. Rohan builds a career but keeps her photograph. Ananya stares from windows. Both carry the same thing: not anger, but the quiet weight of something unfinished. The pause that never became a period.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-dot">VI</div>
+        <div class="tl-content">
+          <div class="tl-phase">Return</div>
+          <div class="tl-title">Hot water, chocolate, and a single flower</div>
+          <p class="tl-desc">A crash. A hospital corridor. Ananya arrives with the three things he once brought her — mirroring his love back to him. A mother's hostility softens. Two friends say the truths that needed saying. The story breathes again.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-dot">★</div>
+        <div class="tl-content">
+          <div class="tl-phase">Healing</div>
+          <div class="tl-title">Marigolds, vows, and a mask removed in public</div>
+          <p class="tl-desc">A small wedding. No chandeliers. Just the people who stayed. And Ananya — who walks up in front of everyone, reaches out her hands, and removes the silk mask covering his healing face. Because every scar he carries, she chooses.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EPILOGUE -->
+<section class="epilogue" id="epilogue">
+  <div class="epilogue-ornament">✦</div>
+  <h2 class="section-heading" style="text-align:center; margin:16px 0 32px;">Five years later — <em>still here</em></h2>
+  <p>"Their wedding photo sat proudly on the mantel — her hand lifting the mask, his eyes lost in hers. Underneath, a small frame read: <em>'Some chapters are worth the rewrite.'</em>"</p>
+  <p>"For the world, they were just a small family in a quiet town. But for them? They were a story that nearly ended — and then didn't."</p>
+  <div class="divider"><span class="divider-icon">♡</span></div>
+  <div class="epilogue-end">The End.</div>
+  <p class="epilogue-note">…But love and love stories never really end, right?</p>
+</section>
+
+<%- include('partials/footer') %>
