@@ -360,24 +360,23 @@
 
             function evaluateNavbarConfiguration() {
                 if (!storySection || !navbar) return;
-
-                const storyTop = storySection.getBoundingClientRect().top;
                 
-                // Swap conditions based on position or mouse pointer location
-                if (storyTop <= 80 || isMouseOverStory) {
+                const storyTop = storySection.getBoundingClientRect().top;
+                const navbarHeight = navbar.offsetHeight;
+                
+                // Triggers perfectly the moment the top of the story section hits the bottom of the nav
+                if (storyTop <= navbarHeight || isMouseOverStory) {
                     navbar.classList.add('show-project-nav');
                 } else {
                     navbar.classList.remove('show-project-nav');
                 }
 
-                // Compact layout sizing tracking
                 if (window.scrollY > 50) {
                     navbar.classList.add('scrolled');
                 } else {
                     navbar.classList.remove('scrolled');
                 }
             }
-
             // Scroll Monitoring
             window.addEventListener('scroll', () => {
                 evaluateNavbarConfiguration();

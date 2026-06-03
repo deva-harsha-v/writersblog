@@ -47,6 +47,7 @@
         /* Sticky Navigation */
         /* Sticky Navigation — Hidden by Default */
         /* Sticky Navigation — Hidden by Default */
+/* Sticky Navigation — Active from structural load */
         .navbar {
             position: fixed;
             top: 0;
@@ -61,23 +62,16 @@
             align-items: center;
             padding: 20px 8%;
             
-            /* Smooth transition for sliding into view */
+            /* Smooth transition for sliding into view and swapping content */
             transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), 
                         opacity 0.4s ease, 
                         padding 0.4s ease, 
                         background-color 0.4s ease;
             
-            /* Initial Hidden States */
-            opacity: 0;
-            transform: translateY(-100%);
-            pointer-events: none; 
-        }
-
-        /* Revealed class triggered by JavaScript */
-        .navbar.visible {
+            /* Make it visible by default so your partial header's links work immediately */
             opacity: 1;
             transform: translateY(0);
-            pointer-events: auto; /* Re-enable links when visible */
+            pointer-events: auto; 
         }
 
         /* Compact style adjustments on deep scroll */
