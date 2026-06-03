@@ -45,6 +45,7 @@
         }
 
         /* Sticky Navigation */
+        /* Sticky Navigation — Hidden by Default */
         .navbar {
             position: fixed;
             top: 0;
@@ -58,9 +59,25 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 8%;
-            transition: all 0.4s ease;
+            transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                        opacity 0.4s ease, 
+                        padding 0.4s ease, 
+                        background-color 0.4s ease;
+            
+            /* Initially Hidden States */
+            opacity: 0;
+            transform: translateY(-100%);
+            pointer-events: none; /* Prevents interaction while invisible */
         }
 
+        /* Revealed when scrolled past Hero or Hovering on Story */
+        .navbar.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        /* Compact style adjustments on deep scroll */
         .navbar.scrolled {
             padding: 14px 8%;
             background: #030305;
