@@ -3,13 +3,13 @@
 
 <nav class="navbar">
         <a href="#hero" class="nav-logo">DO NOT <span>DISTURB</span></a>
-            <ul id="projectNavTemplate" class="nav-links-project" style="display: none;">
-                <li><a href="#story">Story</a></li>
-                <li><a href="#characters">Characters</a></li>
-                <li><a href="#chapters">Chapters</a></li>
-                <li><a href="#quotes">Quotes</a></li>
-                <li><a href="#journey">Journey</a></li>
-            </ul>
+        <ul class="nav-links">
+            <li><a href="#story">Story</a></li>
+            <li><a href="#characters">Characters</a></li>
+            <li><a href="#chapters">Chapters</a></li>
+            <li><a href="#quotes">Quotes</a></li>
+            <li><a href="#journey">Journey</a></li>
+        </ul>
     </nav>
 
     <!-- SECTION 1 — HERO SECTION -->
@@ -345,89 +345,34 @@
     </footer>
 
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const navbar = document.querySelector('.navbar');
-        const mainNavLinks = document.querySelector('.nav-links');
-        const projectLinksTemplate = document.getElementById('projectNavTemplate');
-        const storySection = document.querySelector('#story');
-        let isMouseOverStory = false;
-
-        // Structural Engineering: Wrap links cleanly to lock structural positions
-        if (navbar && mainNavLinks && projectLinksTemplate) {
-            // Create a local wrapper to prevent layout offsets on cross-fades
-            const navWrapper = document.createElement('div');
-            navWrapper.className = 'nav-wrapper';
-            
-            // Insert wrapper exactly where the main links were
-            mainNavLinks.parentNode.insertBefore(navWrapper, mainNavLinks);
-            
-            // Move both list structures cleanly into the shared position engine wrapper
-            navWrapper.appendChild(mainNavLinks);
-            
-            projectLinksTemplate.style.display = 'flex';
-            navWrapper.appendChild(projectLinksTemplate);
-        }
-
-        function evaluateNavbarConfiguration() {
-            if (!storySection || !navbar) return;
-            
-            const storyTop = storySection.getBoundingClientRect().top;
-            const navbarHeight = navbar.offsetHeight;
-            
-            // Swap condition metrics targeting the active view element line boundary
-            if (storyTop <= navbarHeight || isMouseOverStory) {
-                navbar.classList.add('show-project-nav');
-            } else {
-                navbar.classList.remove('show-project-nav');
-            }
-
-            // Compact sizing toggles on depth scrolling executions
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
             }
-        }
 
-        // Window Scroll Monitoring Trackers
-        window.addEventListener('scroll', () => {
-            evaluateNavbarConfiguration();
+            // Highlighting active link sections
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let currentId = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 200)) {
+                    currentId = section.getAttribute('id');
+                }
+            });
 
-            if (navbar.classList.contains('show-project-nav')) {
-                const sections = document.querySelectorAll('section');
-                const navLinks = document.querySelectorAll('.nav-links-project a');
-                
-                let currentId = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (window.scrollY >= (sectionTop - 200)) {
-                        currentId = section.getAttribute('id');
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${currentId}`) {
-                        link.classList.add('active');
-                    }
-                });
-            }
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentId}`) {
+                    link.classList.add('active');
+                }
+            });
         });
+    </script>
 
-        // Interactive Element Boundaries Hover Engine Tracking
-        if (storySection) {
-            storySection.addEventListener('mouseenter', () => {
-                isMouseOverStory = true;
-                evaluateNavbarConfiguration();
-            });
-            storySection.addEventListener('mouseleave', () => {
-                isMouseOverStory = false;
-                evaluateNavbarConfiguration();
-            });
-        }
-
-        // Initialize immediately on content initialization payload
-        evaluateNavbarConfiguration();
-    });
-</script>
     <%- include('partials/footer') %>

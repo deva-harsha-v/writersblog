@@ -45,13 +45,6 @@
         }
 
         /* Sticky Navigation */
-        /* Sticky Navigation — Hidden by Default */
-        /* Sticky Navigation — Hidden by Default */
-        /* ==========================================================================
-        STICKY ARCHITECTURE & DYNAMIC SWAP LAYOUT ENGINE
-        ========================================================================== */
-
-        /* Core Navigation Parent Block Container */
         .navbar {
             position: fixed;
             top: 0;
@@ -60,27 +53,18 @@
             z-index: 1000;
             background: var(--bg-nav);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255, 46, 59, 0.08);
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 8%;
-            
-            /* Global layout speed settings */
-            transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                        padding 0.4s ease, 
-                        background-color 0.4s ease;
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto; 
+            transition: all 0.4s ease;
         }
 
-        /* Compact style metrics on scroll execution */
         .navbar.scrolled {
             padding: 14px 8%;
             background: #030305;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .nav-logo {
@@ -93,7 +77,6 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            z-index: 1010;
         }
 
         .nav-logo span {
@@ -101,60 +84,13 @@
             text-shadow: 0 0 10px var(--accent-glow);
         }
 
-        /* Shared Positioning Anchor Wrapper */
-        .nav-wrapper {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            min-width: 400px; /* Ensures space allocated avoids structural content popping */
-        }
-
-        /* Navigation List Architecture: State 1 (Primary Global Content) */
         .nav-links {
             display: flex;
             gap: 35px;
             list-style: none;
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-            transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                        transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
-        /* Navigation List Architecture: State 2 (Custom Modular Book Anchors) */
-        .nav-links-project {
-            display: flex;
-            gap: 35px;
-            list-style: none;
-            position: absolute;
-            right: 0;
-            opacity: 0;
-            transform: translateY(15px);
-            pointer-events: none;
-            transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                        transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-
-        /* --- STATE CHANGE TRIGGERS (SWAP HOOKS) --- */
-
-        /* Action: Hide Primary Global Layout Elements gracefully down on active match */
-        .navbar.show-project-nav .nav-links {
-            opacity: 0;
-            transform: translateY(-15px);
-            pointer-events: none;
-        }
-
-        /* Action: Render Custom Book Project Links active inside Viewport spacing boundaries */
-        .navbar.show-project-nav .nav-links-project {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-        }
-
-        /* Universal Typography & Interactive Accent Glow Mechanics */
-        .nav-links a, 
-        .nav-links-project a {
+        .nav-links a {
             color: var(--text-muted);
             text-decoration: none;
             font-family: var(--font-code);
@@ -162,15 +98,12 @@
             font-weight: 500;
             letter-spacing: 1px;
             text-transform: uppercase;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
             position: relative;
             padding: 5px 0;
-            display: inline-block;
         }
 
-        /* Premium Bottom Glowing Accent Bar Definition */
-        .nav-links a::after,
-        .nav-links-project a::after {
+        .nav-links a::after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -182,18 +115,13 @@
             box-shadow: 0 0 8px var(--accent);
         }
 
-        /* Focus and Active Tracking Highlights updates */
         .nav-links a:hover::after,
-        .nav-links a.active::after,
-        .nav-links-project a:hover::after,
-        .nav-links-project a.active::after {
+        .nav-links a.active::after {
             width: 100%;
         }
 
         .nav-links a:hover,
-        .nav-links a.active,
-        .nav-links-project a:hover,
-        .nav-links-project a.active {
+        .nav-links a.active {
             color: var(--text-main);
         }
 
