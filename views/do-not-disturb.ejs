@@ -3,13 +3,13 @@
 
 <nav class="navbar">
         <a href="#hero" class="nav-logo">DO NOT <span>DISTURB</span></a>
-        <ul class="nav-links">
-            <li><a href="#story">Story</a></li>
-            <li><a href="#characters">Characters</a></li>
-            <li><a href="#chapters">Chapters</a></li>
-            <li><a href="#quotes">Quotes</a></li>
-            <li><a href="#journey">Journey</a></li>
-        </ul>
+            <ul id="projectNavTemplate" class="nav-links-project" style="display: none;">
+                <li><a href="#story">Story</a></li>
+                <li><a href="#characters">Characters</a></li>
+                <li><a href="#chapters">Chapters</a></li>
+                <li><a href="#quotes">Quotes</a></li>
+                <li><a href="#journey">Journey</a></li>
+            </ul>
     </nav>
 
     <!-- SECTION 1 — HERO SECTION -->
@@ -345,67 +345,80 @@
     </footer>
 
 <script>
-    const navbar = document.querySelector('.navbar');
-    const storySection = document.querySelector('#story');
-    let isMouseOverStory = false;
+        document.addEventListener("DOMContentLoaded", () => {
+            const navbar = document.querySelector('.navbar');
+            const targetNavContainer = document.querySelector('.nav-links');
+            const projectLinksTemplate = document.getElementById('projectNavTemplate');
+            const storySection = document.querySelector('#story');
+            let isMouseOverStory = false;
 
-    function handleNavbarVisibility() {
-        if (!storySection || !navbar) return;
-
-        // Get bounding coordinates of the story section relative to viewport
-        const storyTop = storySection.getBoundingClientRect().top;
-        
-        // Trigger if #story section reaches the top area of viewport OR mouse is hovering over it
-        if (storyTop <= 60 || isMouseOverStory) {
-            navbar.classList.add('visible');
-        } else {
-            navbar.classList.remove('visible');
-        }
-
-        // Maintain the compact background style on scroll
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    }
-
-    // Scroll Observer
-    window.addEventListener('scroll', () => {
-        handleNavbarVisibility();
-
-        // Highlighting active link sections
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-links a');
-        
-        let currentId = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (window.scrollY >= (sectionTop - 200)) {
-                currentId = section.getAttribute('id');
+            // Inject your book links right into the existing navbar container pulled from the partial header
+            if (targetNavContainer && projectLinksTemplate) {
+                projectLinksTemplate.style.display = 'flex';
+                targetNavContainer.appendChild(projectLinksTemplate);
             }
-        });
 
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${currentId}`) {
-                link.classList.add('active');
+            function evaluateNavbarConfiguration() {
+                if (!storySection || !navbar) return;
+
+                const storyTop = storySection.getBoundingClientRect().top;
+                
+                // Swap conditions based on position or mouse pointer location
+                if (storyTop <= 80 || isMouseOverStory) {
+                    navbar.classList.add('show-project-nav');
+                } else {
+                    navbar.classList.remove('show-project-nav');
+                }
+
+                // Compact layout sizing tracking
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
             }
-        });
-    });
 
-    // Mouse Tracking Event Observers on the #story section
-    if (storySection) {
-        storySection.addEventListener('mouseenter', () => {
-            isMouseOverStory = true;
-            handleNavbarVisibility();
-        });
+            // Scroll Monitoring
+            window.addEventListener('scroll', () => {
+                evaluateNavbarConfiguration();
 
-        storySection.addEventListener('mouseleave', () => {
-            isMouseOverStory = false;
-            handleNavbarVisibility();
-        });
-    }
-</script>
+                // Standard highlighted section tracker logic targeting the injected list links
+                if (navbar.classList.contains('show-project-nav')) {
+                    const sections = document.querySelectorAll('section');
+                    const navLinks = document.querySelectorAll('.nav-links-project a');
+                    
+                    let currentId = '';
+                    sections.forEach(section => {
+                        const sectionTop = section.offsetTop;
+                        if (window.scrollY >= (sectionTop - 200)) {
+                            currentId = section.getAttribute('id');
+                        }
+                    });
 
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${currentId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+
+            // Hover Tracking Mechanics for the #story block
+            if (storySection) {
+                storySection.addEventListener('mouseenter', () => {
+                    isMouseOverStory = true;
+                    evaluateNavbarConfiguration();
+                });
+
+                storySection.addEventListener('mouseleave', () => {
+                    isMouseOverStory = false;
+                    evaluateNavbarConfiguration();
+                });
+            }
+
+            // Run initial check on load execution 
+            evaluateNavbarConfiguration();
+        });
+    </script>
     <%- include('partials/footer') %>
