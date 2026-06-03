@@ -90,8 +90,83 @@ app.get('/happy-fathers-day', (req, res) => {
   });
 });
 
+app.get('/fan-to-fame', (req, res) => {
+  res.render('fan-to-fame', {
+    title: 'Fan to Fame',
+    currentPage: 'works'
+  });
+});
 module.exports = app;
 
+app.get('/whispers-in-the-dark', (req, res) => {
+  res.render('whispers-in-the-dark', {
+    title: 'Whispers in the Dark',
+    currentPage: 'works'
+  });
+});
+
+app.get('/chrono-vendetta', (req, res) => {
+  res.render('chrono-vendetta', {
+    title: 'Chrono Vendetta',
+    currentPage: 'works'
+  });
+});
+
+app.get('/do-not-disturb', (req, res) => {
+  res.render('do-not-disturb', {
+    title: 'Do Not Disturb',
+    currentPage: 'works'
+  });
+});
+
+app.get('/honeymoon-haunting', (req, res) => {
+  res.render('honeymoon-haunting', {
+    title: 'Honeymoon Haunting',
+    currentPage: 'works'
+  });
+});
+
+app.get('/double-trouble-in-love', (req, res) => {
+  res.render('double-trouble-in-love', {
+    title: 'Double Trouble in Love',
+    currentPage: 'works'
+  });
+});
+
+app.get('/unexpected-love', (req, res) => {
+  res.render('unexpected-love', {
+    title: 'Unexpected Love',
+    currentPage: 'works'
+  });
+});
+
+app.get('/the-phantom-twin', (req, res) => {
+  res.render('the-phantom-twin', {
+    title: 'The Phantom Twin',
+    currentPage: 'works'
+  });
+});
+
+app.get('/tested-hearts-2', (req, res) => {
+  res.render('tested-hearts-2', {
+    title: 'Tested Hearts 2',
+    currentPage: 'works'
+  });
+});
+
+app.get('/the-blade-code', (req, res) => {
+  res.render('the-blade-code', {
+    title: 'The Blade Code',
+    currentPage: 'works'
+  });
+});
+
+app.get('/preservationist', (req, res) => {
+  res.render('preservationist', {
+    title: 'The Preservationist',
+    currentPage: 'works'
+  });
+});
 if (require.main === module) {
   app.listen(PORT, () => {
     console.log(`🚀 Writer's site running on port ${PORT}`);
